@@ -1,12 +1,13 @@
 body, html {
     font-family: "Roboto", sans-serif;
     height: 100%;
+    background-color: lightgoldenrodyellow;
   }
 
 
 #startbox{
   display: flex;
-  height: 600px;
+  height: 200px;
   width: 100%;
   justify-content: space-evenly;
   flex-direction: row;
@@ -15,4 +16,42 @@ body, html {
 
 #button{
   height: 50px;
+  width: 50px;
+}
+
+
+
+#note{
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  background-color:white;  
+  border: lightsalmon;
+}
+
+#notehead{
+  height: 50px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  background-color: lightgrey;
+  justify-content: space-evenly;
+}
+#edit {
+  width: 50px;
+}
+#delete {
+  width: 50px;
+}
+
+#notebody{
+  height: 150px;
+}
+
+h1{
+  text-align: center;
+  color:red;
+  width: 50px;
 }

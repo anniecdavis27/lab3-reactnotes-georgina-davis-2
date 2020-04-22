@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable object-curly-spacing */
+/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/button-has-type */
@@ -10,17 +13,20 @@ class Startbox extends Component {
   }
 
   onInputChange = (event) => {
-    console.log(event.target.value);
-    this.setState({ starttitle: event.target.value });
-    console.log(this.state);
+    this.setState({starttitle: event.target.value });
+    this.props.inputChange(event.target.value);
   }
+
+  onButtonClick = (event) => {
+    this.props.addNote();
+  }
+
 
   render() {
     return (
-      // eslint-disable-next-line react/jsx-filename-extension
       <div>
-        <input onChange={this.onInputChange} value={this.state} />
-        <button id="create" onClick={() => this.props.addTitle(this.state)}>Create Note</button>
+        <input onChange={this.onInputChange} />
+        <button id="create" onClick={this.onButtonClick}>Create Note</button>
       </div>
     );
   }
