@@ -9,5 +9,28 @@
     <div id="main">Loading</div>
   </nav>
   <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAsQJkV5YLuykYVt7tGc120hCYxMeCQsT4",
+    authDomain: "firenotes-a7694.firebaseapp.com",
+    databaseURL: "https://firenotes-a7694.firebaseio.com",
+    projectId: "firenotes-a7694",
+    storageBucket: "firenotes-a7694.appspot.com",
+    messagingSenderId: "365475003870",
+    appId: "1:365475003870:web:a01ebf33da965f1a3cf14f",
+    measurementId: "G-3VTFJYX2P3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   </body>
 </html>

@@ -14,11 +14,10 @@ class Startbox extends Component {
 
   onInputChange = (event) => {
     this.setState({starttitle: event.target.value });
-    this.props.inputChange(event.target.value);
   }
 
   onButtonClick = (event) => {
-    this.props.addNote();
+    this.props.addNote(this.state.starttitle);
   }
 
 
