@@ -9,6 +9,7 @@ import { Map as iMap } from 'immutable';
 import Startbox from './components/startbox';
 import './style.scss';
 import Note from './components/notes';
+import * as db from './cservices/datastore';
 
 class App extends Component {
   constructor(props) {
@@ -17,27 +18,28 @@ class App extends Component {
     this.state = { notes: iMap() };
   }
 
+  componentDidMount() {
+    db.fetchNotes((notes) => {
+      this.setState({ notes: iMap(notes) });
+    });
+  }
 
   // eslint-disable-next-line react/destructuring-assignment
   addNote = (text_) => {
-    this.setState((prevState) => ({
-      notes: prevState.notes.set(this.counter,
-        {
-          title: text_,
-          text: '',
-          x: 0,
-          y: 0,
-          zIndex: 0,
-        }),
-    }));
+    const newNote = (this.counter,
+    {
+      title: text_,
+      text: '',
+      x: 0,
+      y: 0,
+      zIndex: 0,
+    });
     this.counter += 1;
+    db.addNotes(newNote);
   };
 
   deleteNote = (id) => {
-    console.log(id);
-    this.setState((prevState) => ({
-      notes: prevState.notes.delete(id),
-    }));
+    db.deleteNotes(id);
   }
 
   updateNote = (id, note) => {
