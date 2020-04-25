@@ -1,9 +1,8 @@
 /* eslint-disable space-before-function-paren */
 /* eslint-disable func-names */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prefer-arrow-callback */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-var */
+
 import firebase from 'firebase';
 
 var firebaseConfig = {
@@ -29,7 +28,9 @@ function addNotes(newNote) {
 } // update similarly
 
 export function fetchNotes(callback) {
+  // eslint-disable-next-line prefer-arrow-callback
   firebase.database().ref('notes').on('value', function(snapshot) {
     const newNoteState = snapshot.val();
+    callback(newNoteState);
   });
 }
